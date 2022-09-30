@@ -15,6 +15,22 @@
         "cnh": "cnh-digital.jpg"
     },
 
+    "email_invalido": {
+        "name": "simao",
+        "cpf": "98765432101",
+        "email": "simao@.email.com",
+        "whatsapp": "123456789",
+        "address": {
+            "postalCode": "60534470",
+            "street": "Rua Ana Jorge",
+            "number": "645",
+            "district": "Genibaú",
+            "city_state": "Fortaleza/CE"
+        },
+        "delivery_method": "Moto",
+        "cnh": "cnh-digital.jpg"
+    },
+
     "cpf_invalido": {
         "name": "simao",
         "cpf": "98765xx",
