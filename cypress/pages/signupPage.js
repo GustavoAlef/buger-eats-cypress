@@ -1,6 +1,6 @@
 class SignupPage {
     goTo() {
-        cy.visit("https://buger-eats.vercel.app")
+        cy.visit(Cypress.config('baseUrl'))
         cy.get('a[href="/deliver"]').click()
         cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
     }

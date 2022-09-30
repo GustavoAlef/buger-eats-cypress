@@ -5,9 +5,10 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    baseUrl: 'https://buger-eats.vercel.app',
     watchForFileChanges: false,
     viewportWidth: 1440,
-    viewportHeight: 900
+    viewportHeight: 900,
 
   },
 });
