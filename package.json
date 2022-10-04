@@ -12,6 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^10.9.0",
-    "eslint": "^8.24.0"
+    "eslint": "^8.24.0",
+    "faker": "^5.5.3",
+    "gerador-validador-cpf": "^5.0.2"
   }
 }

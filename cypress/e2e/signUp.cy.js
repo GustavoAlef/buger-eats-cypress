@@ -1,19 +1,16 @@
 /// <reference types="Cypress" />
 import SignupPage from '../pages/signupPage'
+import SignupFactory from '../factories/SignupFactory'
 
 describe("Cadastro", () => {
     var signup = new SignupPage()
-    let deliver;
-    beforeEach(() => {
-        cy.fixture('deliver').then((data) => {
-            deliver = data
-        })
-    })
 
     it("Usuario deve se tornar um entregador", () => {
 
+        var deliver = SignupFactory.deliver()
+
         signup.goTo()
-        signup.fillForm(deliver.signup)
+        signup.fillForm(deliver)
         signup.submit()
 
         const expectedMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.'
@@ -23,8 +20,11 @@ describe("Cadastro", () => {
 
     it("Usuario com email incorreto", () => {
 
+        var deliver = SignupFactory.deliver()
+        deliver.email = 'email@xx'
+
         signup.goTo()
-        signup.fillForm(deliver.email_invalido)
+        signup.fillForm(deliver)
         signup.submit()
 
         const expectedMessage = 'Oops! Email com formato inválido.'
@@ -34,8 +34,11 @@ describe("Cadastro", () => {
 
     it("Usuario com CPF incorreto", () => {
 
+        var deliver = SignupFactory.deliver()
+        deliver.cpf = '0001234569x'
+
         signup.goTo()
-        signup.fillForm(deliver.cpf_invalido)
+        signup.fillForm(deliver)
         signup.submit()
 
         const expectedMessage = 'Oops! CPF inválido'
